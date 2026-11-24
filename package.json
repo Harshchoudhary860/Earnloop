@@ -1,0 +1,22 @@
+{
+  "name": "earnloop",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Rewards platform where shops pay for ads, surveys and offers, and users earn a share.",
+  "scripts": {
+    "postinstall": "npm install --prefix client",
+    "dev": "concurrently -n api,web \"node --watch server/index.js\" \"npm run dev --prefix client\"",
+    "build": "npm run build --prefix client",
+    "start": "node server/index.js",
+    "test": "node --test server/api.test.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^11.3.0",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": { "concurrently": "^9.0.1" }
+}
